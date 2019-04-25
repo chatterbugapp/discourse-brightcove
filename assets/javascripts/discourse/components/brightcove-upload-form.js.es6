@@ -58,7 +58,7 @@ export default Ember.Component.extend({
     const config = {
       bucket: videoInfo["bucket"],
       aws_key: videoInfo["access_key_id"],
-      signerUrl: `/brightcove/sign/${videoInfo["video_id"]}.json`,
+      signerUrl: `${Discourse.BaseUri}/brightcove/sign/${videoInfo["video_id"]}.json`,
       computeContentMd5: true,
       cryptoMd5Method: function(data) {
         return btoa(SparkMD5.ArrayBuffer.hash(data, true));
